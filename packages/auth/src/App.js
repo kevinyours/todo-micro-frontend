@@ -1,25 +1,25 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import MarketingApp from './components/MarketingApp';
-import Header from './components/Header';
+import { Switch, Route, Router } from 'react-router-dom';
 import {
   StylesProvider,
   createGenerateClassName,
 } from '@material-ui/core/styles';
 
+// import Landing from './components/Landing';
+// import Pricing from './components/Pricing';
+
 const generateClassName = createGenerateClassName({
-  productionPrefix: 'co',
+  productionPrefix: 'auth',
 });
 
 export default () => {
   return (
-    <BrowserRouter>
+    <div>
       <StylesProvider generateClassName={generateClassName}>
-        <div>
-          <Header />
-          <MarketingApp />
-        </div>
+        <Router>
+          <Switch></Switch>
+        </Router>
       </StylesProvider>
-    </BrowserRouter>
+    </div>
   );
 };
