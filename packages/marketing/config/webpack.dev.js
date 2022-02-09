@@ -6,6 +6,10 @@ const packageJson = require('../package.json');
 
 const devConfig = {
   mode: 'development',
+  // 설정하지 않을 시 remoteEntry Local domain 참조
+  output: {
+    publicPath: 'http://localhost:8081/',
+  },
   devServer: {
     port: 8081,
     historyApiFallback: {
